@@ -1,0 +1,14 @@
+version: '3.4'
+services:
+  docexport:
+    container_name: manudocs-docexport
+    image: neverkas/manudocs-docexport:3.0
+    build:
+      context: .
+      dockerfile: export.Dockerfile
+    restart: unless-stopped # reiniciar hasta que lo detengamos nosotros
+    environment:
+      - HOST_ENV=container
+    volumes:
+      - ./docs:/data/docs
+      - ./src/:/data/src

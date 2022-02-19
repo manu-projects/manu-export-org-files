@@ -11,4 +11,4 @@ services:
       - HOST_ENV=container
     volumes:
       - ./docs:/data/docs
-      - ./src/:/data/src
+      - ./public/:/data/public
